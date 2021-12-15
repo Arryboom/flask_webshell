@@ -1,0 +1,31 @@
+component: http
+name: http-flask-YEOFvvI14
+inputs:
+  src:
+    dist: ./
+    exclude:
+      - .env
+    hook: pip3 install -r requirements.txt -t ./
+  region: ap-shanghai
+  faas:
+    framework: flask
+    name: '${name}'
+    runtime: Python3.6
+    eip: true
+    timeout: 3
+    memorySize: 512
+    tags: []
+    environments:
+      - key: LC_ALL
+        value: en_US.utf8
+  apigw:
+    protocols:
+      - http
+      - https
+    timeout: 60
+    environment: release
+    customDomains: []
+  isAutoCiDeploy: false
+org: '1253434186'
+app: dea
+stage: dev
