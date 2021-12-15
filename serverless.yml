@@ -6,7 +6,7 @@ inputs:
     exclude:
       - .env
     hook: pip3 install -r requirements.txt -t ./
-  region: ap-shanghai
+  region: ap-guangzhou
   faas:
     framework: flask
     name: '${name}'
